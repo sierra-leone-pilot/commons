@@ -99,7 +99,6 @@ public class EmailNotificationServiceImpl implements EmailNotification<Multipart
 			 */
 			helper.setTo(mailTo);
 
-			LOGGER.info("From Email Address : " + fromEmailAddress);
 			if (null != fromEmailAddress){
 				helper.setFrom(fromEmailAddress);
 			}
@@ -122,6 +121,11 @@ public class EmailNotificationServiceImpl implements EmailNotification<Multipart
 		/**
 		 * Sends the mail.
 		 */
+		try {
+			LOGGER.info("From Email Address : " + (message.getFrom())[0]);
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
 		emailNotificationUtils.sendMessage(message, emailSender);
 	}
 }
