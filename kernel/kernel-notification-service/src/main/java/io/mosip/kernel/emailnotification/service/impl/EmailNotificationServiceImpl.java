@@ -98,7 +98,8 @@ public class EmailNotificationServiceImpl implements EmailNotification<Multipart
 			 * Sets to, subject, content.
 			 */
 			helper.setTo(mailTo);
-			
+
+			LOGGER.info("From Email Address : " + fromEmailAddress);
 			if (null != fromEmailAddress){
 				helper.setFrom(fromEmailAddress);
 			}
