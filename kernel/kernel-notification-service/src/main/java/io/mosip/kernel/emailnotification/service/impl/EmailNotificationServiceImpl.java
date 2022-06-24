@@ -121,11 +121,6 @@ public class EmailNotificationServiceImpl implements EmailNotification<Multipart
 		/**
 		 * Sends the mail.
 		 */
-		try {
-			LOGGER.info("From Email Address : " + (message.getFrom())[0]);
-		} catch (MessagingException e) {
-			e.printStackTrace();
-		}
 		emailNotificationUtils.sendMessage(message, emailSender);
 	}
 }
