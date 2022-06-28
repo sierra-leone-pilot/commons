@@ -1,4 +1,4 @@
-package io.mosip.kernel.emailnotification.util;
+package io.mosip.kernel.emailnotification.service;
 
 import java.util.List;
 
@@ -7,7 +7,6 @@ import org.springframework.http.MediaType;
 import io.mosip.kernel.emailnotification.constant.ApiName;
 import io.mosip.kernel.emailnotification.exception.ApisResourceAccessException;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Interface RegistrationProcessorRestClientService.
  *
@@ -15,7 +14,7 @@ import io.mosip.kernel.emailnotification.exception.ApisResourceAccessException;
  * @param <T>
  *            the generic type
  */
-	public interface RegistrationProcessorRestClientService<T> {
+public interface PrintRestClientService<T> {
 
 	/**
 	 * Gets the api.
@@ -37,17 +36,6 @@ import io.mosip.kernel.emailnotification.exception.ApisResourceAccessException;
 	public T getApi(ApiName apiName, List<String> pathsegments, String queryParam, String queryParamValue,
 			Class<?> responseType) throws ApisResourceAccessException;
 
-	/**
-	 * Gets the api.
-	 *
-	 * @param apiName the api name
-	 * @param pathsegments the pathsegments
-	 * @param queryParam the query param
-	 * @param queryParamValue the query param value
-	 * @param responseType the response type
-	 * @return the api
-	 * @throws ApisResourceAccessException the apis resource access exception
-	 */
 	public T getApi(ApiName apiName, List<String> pathsegments, List<String> queryParam, List<Object> queryParamValue,
 					Class<?> responseType) throws ApisResourceAccessException;
 
@@ -117,17 +105,17 @@ import io.mosip.kernel.emailnotification.exception.ApisResourceAccessException;
 			T requestedData, Class<?> responseType) throws ApisResourceAccessException;
 
 	/**
-	 * Post Api.
+	 * Post Api
 	 *
-	 * @param apiName the api name
-	 * @param mediaType the media type
-	 * @param pathsegments the pathsegments
-	 * @param queryParam the query param
-	 * @param queryParamValue the query param value
-	 * @param requestedData the requested data
-	 * @param responseType the response type
-	 * @return the t
-	 * @throws ApisResourceAccessException the apis resource access exception
+	 * @param apiName
+	 * @param mediaType
+	 * @param pathsegments
+	 * @param queryParam
+	 * @param queryParamValue
+	 * @param requestedData
+	 * @param responseType
+	 * @return
+	 * @throws ApisResourceAccessException
 	 */
 	public T postApi(ApiName apiName, MediaType mediaType, List<String> pathsegments, List<String> queryParam, List<Object> queryParamValue,
 					 T requestedData, Class<?> responseType) throws ApisResourceAccessException;
@@ -163,28 +151,9 @@ import io.mosip.kernel.emailnotification.exception.ApisResourceAccessException;
 	 * @param queryParamValue the query param value
 	 * @param requestedData the requested data
 	 * @param responseType the response type
-	 * @param mediaType the media type
 	 * @return the t
-	 * @throws ApisResourceAccessException the apis resource access exception
+	 * @throws ApisResourceAccessException 
 	 */
 	public T putApi(ApiName apiName, List<String> pathsegments, String queryParam, String queryParamValue,
 			T requestedData, Class<?> responseType,MediaType mediaType) throws ApisResourceAccessException;
-	
-	/**
-	 * Post api.
-	 *
-	 * @param url the url
-	 * @param mediaType the media type
-	 * @param pathsegments the pathsegments
-	 * @param queryParam the query param
-	 * @param queryParamValue the query param value
-	 * @param requestedData the requested data
-	 * @param responseType the response type
-	 * @return the t
-	 * @throws ApisResourceAccessException the apis resource access exception
-	 */
-	public T postApi(String url, MediaType mediaType, List<String> pathsegments, List<String> queryParam, List<Object> queryParamValue,
-			 T requestedData, Class<?> responseType) throws ApisResourceAccessException;
-
-	public Integer headApi(ApiName apiName, List<String> pathsegments, List<String> queryParamName, List<Object> queryParamValue) throws ApisResourceAccessException;
 }

@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import io.mosip.kernel.emailnotification.service.PrintRestClientService;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
@@ -34,7 +35,6 @@ import io.mosip.kernel.emailnotification.exception.TemplateProcessingFailureExce
 import io.mosip.kernel.emailnotification.exception.util.PlatformErrorMessages;
 import io.mosip.kernel.emailnotification.dto.ResponseWrapper;
 import io.mosip.kernel.emailnotification.dto.TemplateResponseDto;
-import io.mosip.kernel.emailnotification.util.RegistrationProcessorRestClientService;
 
 /**
  * The Class TemplateGenerator.
@@ -61,7 +61,7 @@ public class TemplateGenerator {
 
 	/** The rest client service. */
 	@Autowired
-	private RegistrationProcessorRestClientService<Object> restClientService;
+	private PrintRestClientService<Object> restClientService;
 
 	@Autowired
 	private ObjectMapper mapper;
