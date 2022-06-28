@@ -1,7 +1,5 @@
 package io.mosip.kernel.emailnotification.exception.util;
 
-import io.mosip.kernel.emailnotification.constant.StatusConstants;
-
 // TODO: Auto-generated Javadoc
 /**
  * The Enum RPRPlatformErrorMessages.
