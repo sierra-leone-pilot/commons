@@ -8,6 +8,7 @@ import io.mosip.kernel.emailnotification.constant.ApiName;
 import io.mosip.kernel.emailnotification.exception.ApisResourceAccessException;
 import io.mosip.kernel.emailnotification.util.HTMLFormatter;
 import io.mosip.kernel.emailnotification.util.TemplateGenerator;
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -99,7 +100,7 @@ public class EmailNotificationServiceImpl implements EmailNotification<Multipart
 				Map<String, Object> attributes = new LinkedHashMap<>();
 				attributes.put("mailContent",htmlFormatter.formatText(mailContent));
 				InputStream stream = templateGenerator.getTemplate(templateTypeCode, attributes, MailNotifierConstants.LANGUAGE.getValue());
-				mailContent = stream.toString();
+				mailContent = IOUtils.toString(stream, "UTF-8");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
