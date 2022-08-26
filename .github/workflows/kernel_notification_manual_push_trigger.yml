@@ -42,7 +42,7 @@ jobs:
 
       - name: Build with Maven
         run: |
-          cd kernel
+          cd kernel/kernel-notification-service
           mvn -B package -s $GITHUB_WORKSPACE/settings.xml -DskipTests -Dgpg.skip=true --file pom.xml
 
       - name: Ready the springboot artifacts
