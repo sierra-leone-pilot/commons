@@ -90,14 +90,14 @@ public class LoginServiceImpl implements LoginService {
 
 	@Value("${auth.server.admin.validate.url}")
 	private String validateUrl;
-
-
+	
+	
 	@Value("${mosip.iam.post-logout-uri-param-key:post_logout_redirect_uri}")
 	private String postLogoutRedirectURIParamKey;
-
+	
 	@Value("${mosip.iam.end-session-endpoint-path:/protocol/openid-connect/logout}")
 	private String endSessionEndpointPath;
-
+	
 
 	@Autowired
 	private RestTemplate restTemplate;

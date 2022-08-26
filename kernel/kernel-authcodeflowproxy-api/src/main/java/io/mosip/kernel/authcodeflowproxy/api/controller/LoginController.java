@@ -134,7 +134,7 @@ public class LoginController {
 		responseWrapper.setResponse(mosipUserDto);
 		return responseWrapper;
 	}
-
+	
 	@ResponseFilter
 	@GetMapping(value = "/logout/user")
 	public void logoutUser(
@@ -146,7 +146,7 @@ public class LoginController {
 		if(!allowedUrls.contains(redirectURI)) {
 			LOGGER.error("Url {} was not part of allowed url's",redirectURI);
 			throw new ServiceException(Errors.ALLOWED_URL_EXCEPTION.getErrorCode(), Errors.ALLOWED_URL_EXCEPTION.getErrorMessage());
-	}
+		}
 		String uri = loginService.logoutUser(token,redirectURI);
 		res.setStatus(302);
 		res.sendRedirect(uri);
