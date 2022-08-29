@@ -57,6 +57,10 @@ RUN apt-get -y update \
 && groupadd -g ${container_user_gid} ${container_user_group} \
 && useradd -u ${container_user_uid} -g ${container_user_group} -s /bin/sh -m ${container_user}
 
+ENV kernel_jar_path=${base_path}/libs-release-local/io/mosip/kernel 
+
+COPY /src/sms/* ${kernel_jar_path}/ 
+
 # set working directory for the user
 WORKDIR /home/${container_user}
 
@@ -69,9 +73,6 @@ RUN mkdir -p ${loader_path}
 ENV loader_path_env=${loader_path}
 
 COPY ./target/kernel-notification-service-*.jar kernel-notification-service.jar
-
-ENV kernel_jar_path=${base_path}/libs-release-local/io/mosip/kernel 
-COPY /src/sms/* ${kernel_jar_path}/ 
 
 #RUN mkdir ./mosip-lib/
 
