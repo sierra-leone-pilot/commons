@@ -70,6 +70,9 @@ ENV loader_path_env=${loader_path}
 
 COPY ./target/kernel-notification-service-*.jar kernel-notification-service.jar
 
+ENV kernel_jar_path=${base_path}/libs-release-local/io/mosip/kernel 
+COPY /src/sms/* ${kernel_jar_path}/ 
+
 #RUN mkdir ./mosip-lib/
 
 # change permissions of file inside working dir
