@@ -16,7 +16,7 @@ public class HTMLFormatter {
             if (!v.isEmpty()) {
                 String var3 = v.replace("\\t", "#[TAB]#").trim().replace("#[TAB]#", "&emsp;");
 
-                if (noofEmptyLines > 1) {
+                if (noofEmptyLines > 0) {
                     noofEmptyLines = 0;
                     var3 = "</p><br><p>" + var3;
                 }
