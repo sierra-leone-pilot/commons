@@ -96,16 +96,12 @@ public class EmailNotificationServiceImpl implements EmailNotification<Multipart
 		LOGGER.info("To Request : " + String.join(",", mailTo));
 
 		try {
-			LOGGER.info("Before Format : " + mailContent);
-
 			if(templateTypeCode != null) {
 				Map<String, Object> attributes = new LinkedHashMap<>();
 				attributes.put("mailContent",htmlFormatter.formatText(mailContent));
-					InputStream stream = templateGenerator.getTemplate(templateTypeCode, attributes, MailNotifierConstants.LANGUAGE.getValue());
+				InputStream stream = templateGenerator.getTemplate(templateTypeCode, attributes, MailNotifierConstants.LANGUAGE.getValue());
 				mailContent = IOUtils.toString(stream, "UTF-8");
-				LOGGER.info("From Attribute: " + attributes.get("mailContent"));
 			}
-			LOGGER.info("After Format: " + mailContent);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ApisResourceAccessException e) {

@@ -10,7 +10,6 @@ public class HTMLFormatter {
 
         String var1 = content.trim();
         String[] var2 = var1.replace("\\n", "#NEXT#").split("#NEXT#");
-        System.out.println(var2);
         int noofEmptyLines = 0;
 
         for(String v : var2) {
