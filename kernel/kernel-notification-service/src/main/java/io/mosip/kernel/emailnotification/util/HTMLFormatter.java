@@ -9,13 +9,13 @@ public class HTMLFormatter {
         String formattedMessage = "<p>";
 
         String var1 = content.trim();
-        String[] var2 = var1.split("\n");
+        String[] var2 = var1.split("\\n");
         System.out.println(var2);
         int noofEmptyLines = 0;
 
         for(String v : var2) {
             if (!v.isEmpty()) {
-                String var3 = v.replace("\t", "#[TAB]#").trim().replace("#[TAB]#", "&emsp;");
+                String var3 = v.replace("\\t", "#[TAB]#").trim().replace("#[TAB]#", "&emsp;");
 
                 if (noofEmptyLines > 1) {
                     noofEmptyLines = 0;
