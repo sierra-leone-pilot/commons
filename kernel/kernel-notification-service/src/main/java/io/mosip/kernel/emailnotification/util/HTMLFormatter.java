@@ -18,7 +18,7 @@ public class HTMLFormatter {
 
                 if (noofEmptyLines > 0) {
                     noofEmptyLines = 0;
-                    var3 = "</p><br><p>" + var3;
+                    var3 = "<br>" + var3;
                 }
                 formattedMessage += "<br>"+ var3;
             }
