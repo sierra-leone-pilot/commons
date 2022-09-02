@@ -9,7 +9,7 @@ public class HTMLFormatter {
         String formattedMessage = "<p>";
 
         String var1 = content.trim();
-        String[] var2 = var1.split("\\n");
+        String[] var2 = var1.replace("\\n", "#NEXT#").split("#NEXT#");
         System.out.println(var2);
         int noofEmptyLines = 0;
 
